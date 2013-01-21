@@ -1,0 +1,34 @@
+Note: This is, of course, approximate and just kind of what will actually be said.
+Also, very much an early draft.
+
+(First part depends somewhat on how previous group ends their thing)
+
+So, now you have heard all about the full factorial design. It gives a good indicator of how various factors will influence the final design, and is, overall, a really good way of planning out a design!
+
+Here is why it is almost always useless in practice.
+
+SLIDE
+
+Sure, if you are designing a product with only three factors, it's great. You only need to run 8 experiments, and you have all the information you need for a full factorial design.
+
+SLIDE
+
+Even with four factors, you only need to do 16 experiments. This would probably be acceptable, as, after all, you are getting some very good data which you can use to optimise the design of your products.
+
+However, most of the time your product is likely to have considerably more factors than four. The increase in the number of runs you would have to perform would be exponential. Anyone who has had the misfortune of sitting through lectures relating to computational complexity will know that exponential growth is considered a very, very, bad thing.
+
+Say you had eight factors...
+
+SLIDE
+
+That's a lot of experiments. 256 to be exact. Or say you had two more factors, ten. Not an unlikely scenario.
+
+SLIDE
+
+1024 experimental runs. That would take a while. Probably almost as long as it too me to make that table.
+
+This is why we need what is known as a Fractional Factorial Design.
+
+SLIDE
+
+
