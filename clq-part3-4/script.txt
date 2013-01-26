@@ -3,79 +3,6 @@ Also, very much an early draft.
 
 (First part depends somewhat on how previous group ends their thing)
 
-So, now you have heard all about the full factorial design. It gives a good indicator of how various factors will influence the final design, and is, overall, a really good way of planning out a design!
-
-Here is why it is almost always useless in practice.
-
-SLIDE
-
-Sure, if you are designing a product with only three factors, it's great. You only need to run 8 experiments, and you have all the information you need for a full factorial design.
-
-SLIDE
-
-Even with four factors, you only need to do 16 experiments. This would probably be acceptable, as, after all, you are getting some very good data which you can use to optimise the design of your products.
-
-However, most of the time your product is likely to have considerably more factors than four. The increase in the number of runs you would have to perform would be exponential. Anyone who has had the misfortune of sitting through lectures relating to computational complexity will know that exponential growth is considered a very, very, bad thing.
-
-Say you had eight factors...
-
-SLIDE
-
-That's a lot of experiments. 256 to be exact. Or say you had two more factors, ten. Not an unlikely scenario.
-
-SLIDE
-
-1024 experimental runs. That would take a while. Probably almost as long as it too me to make that table.
-
-This is why we need what is known as a Fractional Factorial Design.
-
-SLIDE
-
-For a fractional factorial design you, as the name suggests, only perform a fraction of the experiments you would have to make for a full factorial design.
-
-This can drastically reduce the number of experiments you will have to run, but it comes at a cost. Obviously less gathering of data will mean less data from which to extract information. The trick is to make sure you get as much information as possible from as few runs as possible.
-
-The trick is making sure that you lose as little data as possible.
-
-SLIDE
-
-So, how do you make sure that you lose as little data as possible when doing less experiments? The trick lies in being smart in choosing what factors you want to test.
-
-An example of how it could be done is shown here, where this table is reduced to...
-
-SLIDE
-
-...this table.
-
-The way in which this is done is not as random as it may seem! This grid is carefully constructed to test as many things as possible in the available experiments.
-
-Ideally, we would be able to test the difference made by all effects in respect to all other effects.
-
-SLIDE
-
-This is a list of all the combinations you would want to test if you had four factors. There are 15 combinations of change, plus the base case where everything stays constant.
-
-Now lets use + to symbolise that these are all the same, and - to symbolise that they are not.
-
-See it yet?
-
-Moving the columns around, you can see that there are two columns for each combination.
-This illustrates that as many combinations as possible have been tested during the available experiments.
-
-Whether a fractional factorial design is sufficient or not will depend on the individual cases in which it is used. For any such model to be sufficient, you should at least have more runs than you have factors in your experiment, preferably at least double.
-
-However, this method can only be used if the number of experimental runs you can perform is a power of 2. Sure, you can reduce the numbers of experiments to as few as you like, but it still has to be some power of two.
-
-But what, I hear you ask, if I have an available number of experimental runs that is not a factor of two? What will I do with all those extra runs?
-
-Fear not! This very problem was faced by the British government in the 40s, and two guys named Plackett and Burman solved it.
-
-SLIDE
-
-As long as your number of available runs is a multiple of four, and the factors is one less than this, you can use the Plackett-Burman Experiment Design. This is a standard design, you don't need to know exactly how this table is constructed.
-However, if you spend a while looking at it (and I have), you will realise that every combination of signs between any two factors appears the same number of times. In this case, every combination appears three times.
-
-At most this could be used for one factor less than the number of experimental runs. However, it would be advisable to use fewer factors and make them redundant, as this would give you greater degrees of freedom when estimating errors.
 
 So, now the question becomes, "when should I use which design?"
 
@@ -87,11 +14,12 @@ If you have loads of factors you want to take into account, and don't really car
 
 
 Got that? Good. Now it's time to present you with something completely new, something which, in reality, will be more useful than all of these designs most of the time.
-The primary problem with what we have done so far is that it only accounts for two levels of each of the factors. What if you want to do it for, say, three factors?
-If a full factorial design for eight factors would require 256 runs, just imagine how many runs eight factors with three levels would require! (Hint: It's 6561)
+The primary problem with what we have done so far is that it can only take into account two levels for each of the factors. What if you want to do it for, say, three factors?
+If a full factorial design for eight factors would require 256 runs, just imagine how many runs eight factors with three levels would require!
+Just to rub the point in a little more, here is a graph. (do graph-thing)
 Sure, fractional factorial and P&B experimental designs use common sense to cut down the number of experiments needed, but in most "real life" situations this just isn't enough.
 
-Where common sense just doesn't do the job, maths comes to the rescue.
+Where common sense just isn't enough, one can always rely on maths!
 
 SLIDE
 
@@ -101,8 +29,54 @@ SLIDE
 
 The basic principle behind Response Surface Methodology, or RSM as I will call it from now on, is to perform some experiments, and then extrapolate further assumed results from those observations.
 
-The idea is to build an equation where the factors, and one or more polynomials of the factors, are assigned coefficients. This can be done with as many polynomials as are needed, but generally that isn't too many.
+The idea is to build an equation where the factors, and one or more polynomials of said factors, are assigned coefficients. This can be done with as high a level of polynomials as is needed, but generally that isn't too many. preferably only two.
 
-(Present example from notes)
+This is all based on reducing, in a sense simplifying, mathematical models to a given form, shown here.
 
-(Something more depending on what is being said after me)
+For example, take this equation. Graphed out it looks like this. This can be simplified to this form.
+Side by side, we can see that they don't match up exactly, but it is close enough.
+Take care though: the approximation is only done within a very small  area. If we zoom out from both graphs, they look like this, i.e., not that similar.
+The moral is, make sure you are aware of the constraints you are working within, and stick to them. Otherwise, be prepared to face the consequences.
+
+So, now we will have a look at different ways of generating this model, using Central Composite Designs.
+
+These CCDs are based on the factorial experiment designs, and use some vector calculations to evolve the design matrix in a way which eventually allows it to carry out a linear regression, i.e. the mathematical approximation I just showed you. We don't need to know the details behind these calculations, we have software that does this for us, but even though we don't need to be too concerned with how the software does its thing, we should have an understanding of what it does.
+
+An important part of what is done, in order to enable the software to perform a linear regression with a reduced number of experiments, is to make the experimental design rotatable. So, what does this mean?
+
+First, imagine you have a 3-level experiment with two factors. A normal factorial experiment design would look like this, and it would give you data for the black spots in the picture. Here I call the lowest level for -1, the middle level for 0, and the high level for 1.
+
+Now we add a third factor to this, giving the figure three dimensions. This shows the 27 results which could be acquired for a three level, three factor design experiment. We have a lot of data-points, that is great, however, as the number of factors increases...
+Well... It's not practical.
+
+Now lets look at what an alternative would look like.
+
+Rather than running all of these experiments, we replace a bunch of them with something that we call axial points.
+
+Here is the difference between the two-factor versions of the two designs.
+The centre point as calculated as it was before, the corners are calculated as it was before, but instead of the points being calculated along the edges of the model, their X and Y values are increased in a way which means they are the same distance from the centre as the corner points.
+
+This symmetry means that every performed experiment has the same precision, and therefore a model can be based on this.
+
+In the case of only having two factors, this still requires us to run 9 experiments. But looking at the case for three factors, using this strategy has cut down the number of experiments from 27 to 15. As the numbers of factors increase, this difference increases dramatically, making this a practical way of reducing the number of experiments needed to acquire a suitable model.
+
+What I have just shown you is actually the Central Composite Circumscribed, or CCC Design. This is one of the standard ways of generating an experimental design suitable for making a quadratic model from.
+
+In order to visualise it better, here is a 3D model showing the location of the data points.
+
+Now, to perform this experiment you would need access to 5 levels for each factor: the ones represented by -1, 0 and 1, but also the two levels located above 1, and below -1.
+Sometimes getting access to levels above or below the previously defined minimum or maximum levels might be a problem.
+There is therefore also an alternative to the CCC Design, the CCI design, the Central Composite Inscribed design.
+
+As you can see, instead of choosing values beyond the extremes, bounded by the square, the corners are instead brought in.
+
+Here is a 3D model illustrating this.
+
+This can still be used to fit a full quadratic model, and does not exceed the bounds coded by 1 and -1. However, it does still require 5 available levels for each factor.
+A potentially significant downside of this method is its failure to perform experiments in the outer corners, so the "extremes" aren't tested.
+
+If, however, you can't get more than three levels for each factor, the design can be done using the Central Composite Faced design, which, compared to the original design, essentially just eliminates some points. The upside is that you can still base a quadratic model on this design, and it still requires less runs than what a full design would. The downside is that it isn't rotatable.
+It is also not orthogonal, which is a property that has also been held by the other designs. And what does it mean for a design to be orthogonal?
+
+An orthogonal design means that you can easily augment, i.e. improve your model with new data, while still using the old data. In a case where you would want to increase the accuracy of the model, you could run experiments etc.etc.
+
