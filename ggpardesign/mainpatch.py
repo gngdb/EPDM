@@ -30,16 +30,84 @@ def powercalc(line):
 def iterator():
     #monte carlo iterator to run the test many times with random values
     import random
+    import math
     
     data = dload("DUMP_FILE") 
 
     data2= []
     for line in data:
         Rc = (line[2]*line[1])/2
-        data2.append(line[0:2]+[Rc]+line[2:]
+        data2.append(line[0:2]+[Rc]+line[2:])
 
     #modulate with random variable
     #query before doing this, so test can also work without this
+    #good old infinite loop
+    while 1:
+        #user query
+        uq = raw_input("Run Monte Carlo(mc) or nominal(n):\n")
+        if uq == "mc":
+            #query for resistor tolerance
+            tol = float(raw_input("Resistor Tolerance(in %):"))/100
+            #run Monte Carlo
+            datalist = []
+            for i in xrange(1000):
+                #modulate all resistor values as Gaussian random variables
+                mcdata = []
+                for line in data2:
+                    #new line
+                    nl
+                    for R in line[:4]:
+                        nl.append(random.gauss(R, tol*R/5.9))
+                    nl.append(line[4])
+                    nl.append(random.gauss(line[5], tol*line[5]/5.9))
+                datalist.append(begin(mcdata))
+            #use the output data to calculate variations in output variables
+            mcout = []
+            for line in zip(*datalist):
+                #unpack the line and zip for all the data
+                linz = zip(*line)
+                avgs = []
+                #calculate averages
+                for x in linz:
+                    avgs.append(sum(x)/len(x))
+                sigmas = []
+                for x, avg in zip(linz, avgs):
+                    s = map(lambda y: (y-avg)**2, x)
+                    sigmas.append(math.sqrt(sum(s)/len(s))) 
+                #estimate yield from both dys
+                ylds = []
+                for x in zip(avgs, sigmas)[:2]:
+                    ylds.append(abs(2-x[0])/x[1])
+                yld = min(ylds)
+                #estimate worst case power consumption
+                pwc = avgs[2]+6*sigmas[2]
+                #esimate worst case accuracy
+                dywcs = []
+                for x in zip(avgs, sigmas)[:2]:
+                    dywcs.append(abs(2-x[0])+6*x[1])
+                dywc = max(dywcs)
+                #append results to list
+                mcout.append([dywc,pwc,yld])
+            
+            #write results to output file
+            f = open("LOAD_FILE", "w")
+            for x in mcout:
+                f.write("%f|%f|%f\n"%(x[0],x[1],x[2]))           
+            f.close()
+
+            break
+        else if uq == "n":
+            #run nominal
+            odata = begin(data2)
+            odata = map(lambda x: [max(x[:2], x[2])],odata[:])
+            #write results to output file
+            f = open("LOAD_FILE", "w")
+            for x in odata:
+                f.write("%f|%f\n"%(x[0],x[1]))
+            f.close()
+            break
+        else if uq == "\n":
+            break
 
 def begin(data):
     #this code is terrible
@@ -69,9 +137,9 @@ def begin(data):
 
     #read in results
     hy = dload("LOAD_FILE")
+    dy1 = map(lambda x: x-2.0, hy)
 
-
-    #print hy
+    print dy1
 
     data2= []
     for line in data:
@@ -97,27 +165,36 @@ def begin(data):
     #read in results
     ly = dload("LOAD_FILE")
 
-    #print ly
+    dy2 = map(lambda x: 2.0-x[0], ly)
 
-    dy = map(lambda x: (x[1][0]-x[0][0])/2, zip(hy,ly))
+    #dy = map(lambda x: (x[1][0]-x[0][0])/2, zip(hy,ly))
 
-    #print dy
+    print dy2
+
+    #dy=[]
+    #for x in zip(dy1,dy2):
+    #    dy.append(max(x))
+    #    if x[0] < 0:
+    #        print "Warning, circuit no longer detects 2 Ohm resistors"
+    #    else if x[1] < 0:
+    #        print "Warning, circuit no longer detects 2 Ohm resistors"
+
 
     plist = []
     #calculate power consumption   
-    for line in data:
+    for line in data2:
         plist.append(powercalc(line))
 
-    odata = zip(dy, plist)
+    odata = zip(dy1, dy2, plist)
 
-    f = open("LOAD_FILE", "w")
+    #f = open("LOAD_FILE", "w")
 
-    for x in odata:
-        f.write("%f|%f\n"%(x[0],x[1]))
+    #for x in odata:
+    #    f.write("%f|%f\n"%(x[0],x[1]))
     
-    f.close()
+    #f.close()
 
-    return None
+    return odata 
 
 if __name__ == "__main__":
     begin()
