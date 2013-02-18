@@ -70,7 +70,6 @@ def begin(data):
     #read in results
     hy = dload("LOAD_FILE")
 
-
     #print hy
 
     data2= []
