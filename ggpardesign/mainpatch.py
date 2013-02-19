@@ -33,7 +33,7 @@ def iterator():
     import math
     
     data = dload("DUMP_FILE") 
-
+    
     data2= []
     for line in data:
         Rc = (line[2]*line[1])/2
@@ -51,15 +51,17 @@ def iterator():
             #run Monte Carlo
             datalist = []
             for i in xrange(1000):
+                print "iteration %s/1000"%(i+1)
                 #modulate all resistor values as Gaussian random variables
                 mcdata = []
                 for line in data2:
                     #new line
-                    nl
+                    nl=[]
                     for R in line[:4]:
                         nl.append(random.gauss(R, tol*R/5.9))
                     nl.append(line[4])
                     nl.append(random.gauss(line[5], tol*line[5]/5.9))
+                    mcdata.append(nl)
                 datalist.append(begin(mcdata))
             #use the output data to calculate variations in output variables
             mcout = []
@@ -77,14 +79,14 @@ def iterator():
                 #estimate yield from both dys
                 ylds = []
                 for x in zip(avgs, sigmas)[:2]:
-                    ylds.append(abs(2-x[0])/x[1])
+                    ylds.append(x[0]/x[1])
                 yld = min(ylds)
                 #estimate worst case power consumption
                 pwc = avgs[2]+6*sigmas[2]
                 #esimate worst case accuracy
                 dywcs = []
                 for x in zip(avgs, sigmas)[:2]:
-                    dywcs.append(abs(2-x[0])+6*x[1])
+                    dywcs.append(x[0]+6*x[1])
                 dywc = max(dywcs)
                 #append results to list
                 mcout.append([dywc,pwc,yld])
@@ -94,24 +96,25 @@ def iterator():
             for x in mcout:
                 f.write("%f|%f|%f\n"%(x[0],x[1],x[2]))           
             f.close()
-
+            print "Monte Carlo complete"
             break
-        else if uq == "n":
+        elif uq == "n":
             #run nominal
             odata = begin(data2)
-            odata = map(lambda x: [max(x[:2], x[2])],odata[:])
+            odata = map(lambda x: [[max(x[:2])]+[x[2]]],odata[:])
             #write results to output file
             f = open("LOAD_FILE", "w")
             for x in odata:
-                f.write("%f|%f\n"%(x[0],x[1]))
+                f.write("%f|%f\n"%(x[0][0],x[0][1]))
             f.close()
             break
-        else if uq == "\n":
+        elif uq == "\n":
             break
 
 def begin(data):
     #this code is terrible
     import os 
+    import pdb
 
     data2= []
     for line in data:
@@ -137,14 +140,12 @@ def begin(data):
 
     #read in results
     hy = dload("LOAD_FILE")
-    dy1 = map(lambda x: x-2.0, hy)
-
-    print dy1
+    dy1 = map(lambda x: 2.0-x[0], hy)
 
     data2= []
     for line in data:
         Rc = (line[2]*line[1])/2
-        data2.append(line[0:2]+[Rc]+line[2:] + [-0.0002]) 
+        data2.append(line + [-0.0002]) 
 
     f = open("DUMP_FILE_PATCH", "w")
 
@@ -165,11 +166,9 @@ def begin(data):
     #read in results
     ly = dload("LOAD_FILE")
 
-    dy2 = map(lambda x: 2.0-x[0], ly)
+    dy2 = map(lambda x: x[0]-2.0, ly)
 
     #dy = map(lambda x: (x[1][0]-x[0][0])/2, zip(hy,ly))
-
-    print dy2
 
     #dy=[]
     #for x in zip(dy1,dy2):
@@ -197,5 +196,5 @@ def begin(data):
     return odata 
 
 if __name__ == "__main__":
-    begin()
+    iterator()
 
