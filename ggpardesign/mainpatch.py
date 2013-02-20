@@ -23,9 +23,23 @@ def powercalc(line):
     Rd = line[3]
     Ve = line[4]
     Rf = line[5]
-    Rtot = Rf + ((2+Rb)*(Rd+Rc))/(2+Rb+Rd+Rc)
+    Ry = 2
+    Vthy = (Ve*(Rd+Rf))/(Rd+Rc+Rf)
+    Rthy = Ry + (Rf*(Rd+Rc))/(Rf+Rd+Rc)
+    Ithy = Vthy/(Rthy+Rb)
+    Vy = (Rb*Vthy)/(Rthy+Rb)
+    Pb = Vy*Ithy
+    Vthz = (Ve*(Ry+Rb))/(Rf+Ry+Rb)
+    Rthz = (Rf*(Ry+Rb))/(Rf+Ry+Rb) + Rd
+    Ithz = Ve/(Rthz + Rc)
+    Vz = (Vthz*Rc)/(Rthz+Rc)
+    Pc = Ithz*Vz
+    Vx = (Ve*(Ry+Rb)*(Rd+Rc))/((Ry+Rb)*(Rd+Rc)+Rf*(Ry+Rb+Rd+Rc))
+    Pd = (Vx**2)/Rd
+    Pf = ((Ve-Vz)**2)/Rf
+    Rtot = Rf + ((Ry+Rb)*(Rd+Rc))/(Ry+Rb+Rd+Rc)
     power = (Ve**2)/Rtot
-    return power
+    return [power,Pb, Pc, Pd, Pf]
 
 def iterator():
     #monte carlo iterator to run the test many times with random values
@@ -48,38 +62,47 @@ def iterator():
         if uq == "mc":
             #query for resistor tolerance
             tol = float(raw_input("Resistor Tolerance(in %):"))/100
+            psv = float(raw_input("Power supply standard deviation(in %):"))/100
             #run Monte Carlo
             datalist = []
             for i in xrange(1000):
                 print "iteration %s/1000"%(i+1)
-                #modulate all resistor values as Gaussian random variables
+                #modulate all resistor values and power supply as Gaussian random variables
                 mcdata = []
                 for line in data2:
                     #new line
                     nl=[]
                     for R in line[:4]:
                         nl.append(random.gauss(R, tol*R/5.9))
-                    nl.append(line[4])
+                    nl.append(random.gauss(line[4],line[4]*psv))
                     nl.append(random.gauss(line[5], tol*line[5]/5.9))
                     mcdata.append(nl)
                 datalist.append(begin(mcdata))
+            print "Monte Carlo complete"
+            print "Processing..."
             #use the output data to calculate variations in output variables
             mcout = []
+            #the data is a list of list of lists at this point
             for line in zip(*datalist):
-                #unpack the line and zip for all the data
+                #so unpack it into lists and zip each row into a tuple of lists
+                #then unpack the tuple into lists and then zip these lists into tuples
+                #so now each tuple in the data is each output of the Monte Carlo
                 linz = zip(*line)
                 avgs = []
-                #calculate averages
+                #calculate average of each tuple and add it to a list
                 for x in linz:
                     avgs.append(sum(x)/len(x))
+                #do the same with standard deviations
                 sigmas = []
                 for x, avg in zip(linz, avgs):
                     s = map(lambda y: (y-avg)**2, x)
                     sigmas.append(math.sqrt(sum(s)/len(s))) 
                 #estimate yield from both dys
                 ylds = []
+                #make a list of the averages and sigmas in tuples, then throw away all but the dys
                 for x in zip(avgs, sigmas)[:2]:
                     ylds.append(x[0]/x[1])
+                #smallest yield is the worst yield
                 yld = min(ylds)
                 #estimate worst case power consumption
                 pwc = avgs[2]+6*sigmas[2]
@@ -88,15 +111,26 @@ def iterator():
                 for x in zip(avgs, sigmas)[:2]:
                     dywcs.append(x[0]+6*x[1])
                 dywc = max(dywcs)
+                #estimate worst case power consumption for each resistor
+                Rwcs = []
+                for x in zip(avgs,sigmas)[3:]:
+                    Rwcs.append(x[0]+6*x[1])
                 #append results to list
-                mcout.append([dywc,pwc,yld])
+                mcout.append([dywc,pwc,yld]+Rwcs)
             
             #write results to output file
             f = open("LOAD_FILE", "w")
             for x in mcout:
-                f.write("%f|%f|%f\n"%(x[0],x[1],x[2]))           
+                y = range(len(x))
+                y.reverse()
+                for z in zip(x,y):
+                    if z[1]==0:
+                        f.write("%f\n"%z[0])
+                    else:
+                        f.write("%f|"%z[0])
+                    #f.write("%f|%f|%f\n"%(x[0],x[1],x[2]))           
             f.close()
-            print "Monte Carlo complete"
+            print "Processing complete"
             break
         elif uq == "n":
             #run nominal
@@ -105,11 +139,18 @@ def iterator():
             #write results to output file
             f = open("LOAD_FILE", "w")
             for x in odata:
-                f.write("%f|%f\n"%(x[0][0],x[0][1]))
+                y = range(len(x))
+                y.reverse()
+                for z in zip(x,y):
+                    if z[1]==0:
+                        f.write("%f\n"%z[0])
+                    else:
+                        f.write("%f|"%z[0])
             f.close()
             break
         elif uq == "\n":
             break
+    return None
 
 def begin(data):
     #this code is terrible
@@ -184,7 +225,7 @@ def begin(data):
     for line in data2:
         plist.append(powercalc(line))
 
-    odata = zip(dy1, dy2, plist)
+    odata = zip(dy1, dy2, *zip(*plist))
 
     #f = open("LOAD_FILE", "w")
 
