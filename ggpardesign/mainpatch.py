@@ -1,8 +1,10 @@
 def dload(fname):
+    #open DUMP_FILE
     f = open(fname)
 
     data = []
 
+    #add the data to data, line by line
     for line in f:
         data.append(line)
 
@@ -10,7 +12,9 @@ def dload(fname):
 
     import string
 
+    #split the data up by the | character
     data = map(lambda x: string.split(x, "|"), data[:])
+    #turn all the strings into floats
     data = map(lambda x: map(lambda y: float(y), x), data[:])
 
     return data
@@ -23,17 +27,20 @@ def powercalc(line):
     Rd = line[3]
     Ve = line[4]
     Rf = line[5]
-    Ry = 2
+    Ry = 2.0
+    #Using thevenins theorem, Vy is the point next to Rb
     Vthy = (Ve*(Rd+Rf))/(Rd+Rc+Rf)
     Rthy = Ry + (Rf*(Rd+Rc))/(Rf+Rd+Rc)
     Ithy = Vthy/(Rthy+Rb)
     Vy = (Rb*Vthy)/(Rthy+Rb)
     Pb = Vy*Ithy
+    #Vz is the point next to Rc
     Vthz = (Ve*(Ry+Rb))/(Rf+Ry+Rb)
     Rthz = (Rf*(Ry+Rb))/(Rf+Ry+Rb) + Rd
     Ithz = Ve/(Rthz + Rc)
     Vz = (Vthz*Rc)/(Rthz+Rc)
     Pc = Ithz*Vz
+    #Vx is the point next to Rf
     Vx = (Ve*(Ry+Rb)*(Rd+Rc))/((Ry+Rb)*(Rd+Rc)+Rf*(Ry+Rb+Rd+Rc))
     Pd = (Vx**2)/Rd
     Pf = ((Ve-Vz)**2)/Rf
@@ -47,7 +54,7 @@ def iterator():
     import math
     
     data = dload("DUMP_FILE") 
-    
+    #infer what Rc should be on each line
     data2= []
     for line in data:
         Rc = (line[2]*line[1])/2
@@ -113,7 +120,7 @@ def iterator():
                 dywc = max(dywcs)
                 #estimate worst case power consumption for each resistor
                 Rwcs = []
-                for x in zip(avgs,sigmas)[3:]:
+                for x in zip(avgs,sigmas)[2:]:
                     Rwcs.append(x[0]+6*x[1])
                 #append results to list
                 mcout.append([dywc,pwc,yld]+Rwcs)
@@ -135,10 +142,16 @@ def iterator():
         elif uq == "n":
             #run nominal
             odata = begin(data2)
-            odata = map(lambda x: [[max(x[:2])]+[x[2]]],odata[:])
+            #probably just change this bit to a simple for loop
+            #odata = map(lambda x: [max(x[:2]),x[2:]],odata[:])
+            odata2 = []
+            for line in odata[:]:
+                l2 = [max(line[:2])]
+                l2.extend(line[2:])
+                odata2.append(l2)
             #write results to output file
             f = open("LOAD_FILE", "w")
-            for x in odata:
+            for x in odata2:
                 y = range(len(x))
                 y.reverse()
                 for z in zip(x,y):
