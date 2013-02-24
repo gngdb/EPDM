@@ -52,6 +52,8 @@ def iterator():
     #monte carlo iterator to run the test many times with random values
     import random
     import math
+    import time
+    import pickle
     
     data = dload("DUMP_FILE") 
     #infer what Rc should be on each line
@@ -137,6 +139,25 @@ def iterator():
                         f.write("%f|"%z[0])
                     #f.write("%f|%f|%f\n"%(x[0],x[1],x[2]))           
             f.close()
+            #combine input and output data
+            pdata = map(lambda x: x[0]+x[1], zip(data2,mcout))
+            #pickle results
+            #open pickle file
+            try:
+                #open existing dictionary
+                f = open("dblog.pickle")
+                #and read it
+                pdict = pickle.load(f)
+                f.close()
+            except IOError:
+                #initialise dictionary
+                pdict = {}
+            #add to pickled dictionary
+            pdict[time.ctime(time.time())] = pdata
+            #rewrite pickle file
+            f = open("dblog.pickle", "wb")
+            pickle.dump(pdict, f)
+            f.close()
             print "Processing complete"
             break
         elif uq == "n":
@@ -159,6 +180,27 @@ def iterator():
                         f.write("%f\n"%z[0])
                     else:
                         f.write("%f|"%z[0])
+            f.close()
+            #pickle results
+            #combine output and input data
+            pdata = [] #I could do this with a map, but for some reason did not
+            for x in zip(data2,odata2):
+                pdata.append(x[0]+x[1])
+            #open pickle file
+            try:
+                #open existing dictionary
+                f = open("dblog.pickle")
+                #and read it
+                pdict = pickle.load(f)
+                f.close()
+            except IOError:
+                #initialise dictionary
+                pdict = {}
+            #add to pickled dictionary
+            pdict[time.ctime(time.time())] = pdata
+            #rewrite pickle file
+            f = open("dblog.pickle", "wb")
+            pickle.dump(pdict, f)
             f.close()
             break
         elif uq == "\n":
