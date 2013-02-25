@@ -20,7 +20,8 @@ def dload(fname):
     return data
 
 def powercalc(line):
-    #assuming balanced circuit, find power consumption
+    """assuming balanced circuit, find power consumption"""
+    #my excuse for it being this verbose is to make it easily readable
     Ra = line[0]
     Rb = line[1]
     Rc = line[2]
@@ -41,9 +42,10 @@ def powercalc(line):
     Vz = (Vthz*Rc)/(Rthz+Rc)
     Pc = Ithz*Vz
     #Vx is the point next to Rf
-    Vx = (Ve*(Ry+Rb)*(Rd+Rc))/((Ry+Rb)*(Rd+Rc)+Rf*(Ry+Rb+Rd+Rc))
-    Pd = (Vx**2)/Rd
-    Pf = ((Ve-Vz)**2)/Rf
+    Rbridge = ((Ry+Rb)*(Rd+Rc))/(Ry+Rb+Rd+Rc) 
+    Vx = (Ve*Rbridge)/(Rbridge+Rf)
+    Pd = ((Vx-Vz)**2)/Rd
+    Pf = ((Ve-Vx)**2)/Rf
     Rtot = Rf + ((Ry+Rb)*(Rd+Rc))/(Ry+Rb+Rd+Rc)
     power = (Ve**2)/Rtot
     return [power,Pb, Pc, Pd, Pf]
