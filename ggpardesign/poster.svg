@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   id="svg2816"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="New document 2">
+  <defs
+     id="defs2818">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3754"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 372.04724 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1052.3622 : 372.04724 : 1"
+       inkscape:persp3d-origin="526.18109 : 248.03149 : 1"
+       id="perspective2825" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-units="mm"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.86831672"
+     inkscape:cx="634.64366"
+     inkscape:cy="427.40898"
+     inkscape:current-layer="layer1"
+     id="namedview2820"
+     showgrid="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2827"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2822">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2829"
+       style="-inkscape-font-specification:Arial;font-family:Arial;font-size:16"><flowRegion
+         id="flowRegion2831"><rect
+           id="rect2833"
+           width="131.85658"
+           height="89.650436"
+           x="8.1434202"
+           y="14.444043"
+           style="font-size:16" /></flowRegion><flowPara
+         id="flowPara2835"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2837"
+       style="font-size:16px;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(275.58594,25.341447)"><flowRegion
+         id="flowRegion2839"><rect
+           id="rect2841"
+           width="285.56973"
+           height="46.279121"
+           x="24.43026"
+           y="12.815359" /></flowRegion><flowPara
+         id="flowPara2843">Aim: to detect 2 Ohm resistors</flowPara></flowRoot>    <g
+       id="g3631"
+       transform="translate(135.71875,0)">
+      <g
+         id="g3708"
+         transform="translate(-415.71875,0)">
+        <rect
+           id="rect2845"
+           width="255"
+           height="130"
+           x="305"
+           y="29.094482"
+           style="fill:#ffffff;stroke:#000000;stroke-opacity:1" />
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot3619"
+           style="font-size:16px;fill:#000000;stroke:#000000;stroke-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+           transform="translate(59.265625,24.872697)"><flowRegion
+             id="flowRegion3621"><rect
+               id="rect3623"
+               width="264.30447"
+               height="76.584961"
+               x="301.15738"
+               y="45.616627"
+               style="fill:#000000" /></flowRegion><flowPara
+             id="flowPara3627">Circuit Diagram</flowPara></flowRoot>      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;fill:#000000;stroke:#000000;stroke-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+       x="430"
+       y="24.094482"
+       id="text3638"><tspan
+         sodipodi:role="line"
+         id="tspan3640"
+         x="430"
+         y="24.094482">Title?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;fill:none;stroke:none;stroke-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+       x="14.658156"
+       y="127.63758"
+       id="text3642"><tspan
+         sodipodi:role="line"
+         id="tspan3644"
+         x="14.658156"
+         y="127.63758" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;fill:none;stroke:#000000;font-family:Arial;-inkscape-font-specification:Arial;stroke-opacity:1"
+       x="26.873285"
+       y="108.09337"
+       id="text3646"><tspan
+         sodipodi:role="line"
+         id="tspan3648"
+         x="26.873285"
+         y="108.09337" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;fill:#000000;stroke:#000000;stroke-opacity:1;font-family:Arial;-inkscape-font-specification:Arial;fill-opacity:1"
+       x="25.244602"
+       y="104.02166"
+       id="text3650"><tspan
+         sodipodi:role="line"
+         id="tspan3652"
+         x="25.244602"
+         y="104.02166" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+       x="30.944996"
+       y="115.42245"
+       id="text3654"><tspan
+         sodipodi:role="line"
+         id="tspan3656"
+         x="30.944996"
+         y="115.42245" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+       x="300.40625"
+       y="104.09448"
+       id="text3658"><tspan
+         sodipodi:role="line"
+         id="tspan3660"
+         x="300.40625"
+         y="104.09448"
+         style="stroke:none">Problem: Galvanometer...</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3662"
+       style="font-size:16px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(0.03125,9.4586345)"><flowRegion
+         id="flowRegion3664"><rect
+           id="rect3666"
+           width="263.8468"
+           height="98.535385"
+           x="21.987234"
+           y="190.34192"
+           style="stroke:none" /></flowRegion><flowPara
+         id="flowPara3668">Explaining delta Y with a graph</flowPara><flowPara
+         id="flowPara3704" /><flowPara
+         id="flowPara3706">then explain iterations</flowPara></flowRoot>    <g
+       id="g3686"
+       transform="translate(10,-10)">
+      <rect
+         y="194.09448"
+         x="270"
+         height="220"
+         width="350"
+         id="rect3674"
+         style="fill:none;stroke:#000000;stroke-opacity:1" />
+      <flowRoot
+         style="font-size:16px;fill:none;stroke:#000000;stroke-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+         id="flowRoot3676"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3678"><rect
+             y="253.04625"
+             x="342.02365"
+             height="101.04823"
+             width="197.97635"
+             id="rect3680" /></flowRegion><flowPara
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="flowPara3682">first graph of delta y,</flowPara><flowPara
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="flowPara3684">with annotations,</flowPara><flowPara
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="flowPara3700">first and last graphs with others faded behind</flowPara></flowRoot>    </g>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect3715"
+       width="290"
+       height="150"
+       x="710"
+       y="74.094482" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3717"
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><flowRegion
+         id="flowRegion3719"><rect
+           id="rect3721"
+           width="148.21025"
+           height="82.248543"
+           x="767.11017"
+           y="101.57864" /></flowRegion><flowPara
+         id="flowPara3723" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="750"
+       y="124.09448"
+       id="text3725"><tspan
+         sodipodi:role="line"
+         id="tspan3727"
+         x="750"
+         y="124.09448"
+         style="font-size:11px">full factorial, cubic and other settings</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-opacity:1"
+       id="rect3732"
+       width="290"
+       height="120"
+       x="710"
+       y="284.09448" />
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="771.18188"
+       y="332.85178"
+       id="text3734"><tspan
+         sodipodi:role="line"
+         id="tspan3736"
+         x="771.18188"
+         y="332.85178"
+         style="font-size:13px">Rc and other calculations</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9992126;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 630,224.09448 30,0 0,-80 50,0"
+       id="path3738" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9992126;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 630,334.09448 80,0"
+       id="path3740" />
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="10"
+       y="494.09448"
+       id="text4190"><tspan
+         sodipodi:role="line"
+         id="tspan4192"
+         x="10"
+         y="494.09448"
+         style="font-size:18px">Results and settings</tspan><tspan
+         sodipodi:role="line"
+         x="10"
+         y="516.59448"
+         style="font-size:18px"
+         id="tspan4194">real resistor values</tspan></text>
+    <g
+       id="g4210"
+       transform="translate(-50,10)">
+      <rect
+         y="464.09448"
+         x="260"
+         height="190"
+         width="320"
+         id="rect4196"
+         style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         id="text4206"
+         y="513.76379"
+         x="272.94189"
+         style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           style="font-size:13px"
+           y="513.76379"
+           x="272.94189"
+           id="tspan4208"
+           sodipodi:role="line">Final design details, resistor values etc</tspan></text>
+    </g>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4215"
+       width="310"
+       height="200"
+       x="680"
+       y="474.09448" />
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="715.17682"
+       y="542.55511"
+       id="text4217"><tspan
+         sodipodi:role="line"
+         id="tspan4219"
+         x="715.17682"
+         y="542.55511"
+         style="font-size:18px">Statistical stuff, histograms,</tspan><tspan
+         sodipodi:role="line"
+         x="715.17682"
+         y="565.05511"
+         style="font-size:18px"
+         id="tspan4221">yield within spec,</tspan><tspan
+         sodipodi:role="line"
+         x="715.17682"
+         y="587.55511"
+         style="font-size:18px"
+         id="tspan4223">increasing power spec on one</tspan><tspan
+         sodipodi:role="line"
+         x="715.17682"
+         y="610.05511"
+         style="font-size:18px"
+         id="tspan4225">resistor</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="502.12094"
+       y="714.15149"
+       id="text4227"><tspan
+         sodipodi:role="line"
+         id="tspan4229"
+         x="502.12094"
+         y="714.15149"
+         style="font-size:18">The circuit now detects a resistor to within ...</tspan></text>
+  </g>
+</svg>
