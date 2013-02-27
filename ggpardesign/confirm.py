@@ -42,7 +42,7 @@ def cgraph(filename):
     f = open(filename)
     cfactors = []
     for line in f:
-        cfactors.append(map(lambda x: float(x), string.split(line, ",")))
+        cfactors.append(map(lambda x: float(x), string.split(line)))
     f.close()
     cf2= []
     for line in cfactors:
