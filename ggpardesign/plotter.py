@@ -14,11 +14,11 @@ def plt(zd):
 
     grid(which="both")
 
-    xticks(fontsize='large')
-    yticks(fontsize='large')
+    xticks(fontsize='x-large')
+    yticks(fontsize='x-large')
 
-    xlabel("Galvanometer current(mA)", fontsize='large')
-    ylabel("$R_{y}(\Omega)$", fontsize='large')
+    xlabel("Galvanometer current(mA)", fontsize='x-large')
+    ylabel("$R_{y}(\Omega)$", fontsize='x-large')
 
     show()
 
