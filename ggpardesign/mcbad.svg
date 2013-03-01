@@ -15,7 +15,7 @@
    viewBox="0 0 1229 603"
    version="1.1"
    id="svg1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.47 r22583"
    sodipodi:docname="mcbad.svg">
   <metadata
      id="metadata1756">
@@ -29,7 +29,15 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs1754" />
+     id="defs1754">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 376.875 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1536.25 : 376.875 : 1"
+       inkscape:persp3d-origin="768.125 : 251.25 : 1"
+       id="perspective1129" />
+  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -39,15 +47,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="710"
+     inkscape:window-width="1280"
+     inkscape:window-height="947"
      id="namedview1752"
      showgrid="false"
      inkscape:zoom="0.63150562"
-     inkscape:cx="794.2265"
-     inkscape:cy="318.36139"
+     inkscape:cx="479.10658"
+     inkscape:cy="315.19436"
      inkscape:window-x="0"
-     inkscape:window-y="26"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
   <filter
@@ -5427,4 +5435,14 @@
          style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round" />
     </g>
   </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 1002.3664,305.61464 -940.60923,0"
+     id="path3935"
+     transform="scale(0.8,0.8)" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 576.40025,191.6014 -516.226597,0"
+     id="path3937"
+     transform="scale(0.8,0.8)" />
 </svg>

@@ -14,7 +14,7 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.47 r22583"
    sodipodi:docname="graph.svg">
   <defs
      id="defs4">
@@ -72,15 +72,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="260.47862"
-     inkscape:cy="-178.95178"
+     inkscape:cx="543.91743"
+     inkscape:cy="-42.418618"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1366"
-     inkscape:window-height="710"
+     inkscape:window-width="1280"
+     inkscape:window-height="947"
      inkscape:window-x="0"
-     inkscape:window-y="26"
+     inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -2837,13 +2837,13 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path44562"
-       d="m 544.47223,1012.4432 0,-88.59448"
+       d="m 544.47223,1054.8696 0,-131.02088"
        style="fill:none;stroke:#000000;stroke-width:2.70000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)" />
     <path
        inkscape:connector-curvature="0"
        id="path44564"
-       d="m 541.32397,1018.6865 62.5,0"
-       style="fill:none;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:5.2,2.6;stroke-dashoffset:0" />
+       d="m 541.32397,1061.1129 62.5,0"
+       style="fill:none;stroke:#000000;stroke-width:2.5999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:5.2, 2.6;stroke-dashoffset:0" />
     <text
        xml:space="preserve"
        style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
@@ -2914,16 +2914,6 @@
            x="-301.42856"
            y="240.93361" /></flowRegion><flowPara
          id="flowPara47462" /></flowRoot>    <text
-       xml:space="preserve"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       x="-991.42853"
-       y="903.79077"
-       id="text47464"><tspan
-         sodipodi:role="line"
-         id="tspan47466"
-         x="-991.42853"
-         y="903.79077">Iterations are numbered to indicate progression</tspan></text>
-    <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        x="-24.285707"
@@ -3829,7 +3819,7 @@
     </g>
     <g
        id="text11"
-       transform="matrix(1.8893234,0,0,1.8893234,-484.63408,903.35515)">
+       transform="matrix(2.7961987,0,0,2.7961987,-619.40023,405.99471)">
       <defs
          id="defs48722">
         <path
@@ -3920,7 +3910,7 @@
     </g>
     <g
        id="text12"
-       transform="matrix(1.8737118,0,0,1.8737118,-482.66712,972.02457)">
+       transform="matrix(2.7730935,0,0,2.7730935,-611.53938,570.39758)">
       <defs
          id="defs48751">
         <path
@@ -4011,7 +4001,7 @@
     </g>
     <g
        id="text13"
-       transform="matrix(1.8737118,0,0,1.8737118,-482.66712,1032.2003)">
+       transform="matrix(2.7730935,0,0,2.7730935,-610.83227,715.22434)">
       <g
          id="mathtext3">
         <g
@@ -4095,7 +4085,7 @@
     </g>
     <g
        id="text14"
-       transform="matrix(1.8893234,0,0,1.8893234,-482.63408,1088.4009)">
+       transform="matrix(2.7961987,0,0,2.7961987,-613.86469,859.8904)">
       <g
          id="mathtext4">
         <g
@@ -4179,7 +4169,7 @@
     </g>
     <g
        id="text15"
-       transform="matrix(1.8737118,0,0,1.8737118,-481.53826,1152.5517)">
+       transform="matrix(2.7730935,0,0,2.7730935,-612.40157,1014.0702)">
       <g
          id="mathtext5">
         <g
@@ -4255,7 +4245,7 @@
     </g>
     <g
        id="text16"
-       transform="matrix(1.8893234,0,0,1.8893234,-482.55205,1211.7648)">
+       transform="matrix(2.7961987,0,0,2.7961987,-611.55355,1154.7094)">
       <g
          id="mathtext6">
         <g
@@ -5585,7 +5575,7 @@
     </g>
     <g
        id="text17"
-       transform="matrix(3.4926872,0,0,3.4926872,-662.95559,566.68031)">
+       transform="matrix(3.4926872,0,0,3.4926872,-669.31955,573.04427)">
       <defs
          id="defs49312">
         <path
@@ -5659,12 +5649,12 @@
          inkscape:connector-curvature="0" />
     </g>
     <rect
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:0.2"
+       style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        id="rect10941"
        width="1189.3256"
-       height="242.177"
+       height="216.72116"
        x="-199.5"
-       y="1690.3622" />
+       y="1715.818" />
     <text
        xml:space="preserve"
        style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
@@ -5675,5 +5665,36 @@
          id="tspan10945"
          x="189.50461"
          y="1439.8567">Above graph plots the shaded area</tspan></text>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3985"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Bitstream Vera Sans;font-style:normal;font-weight:normal;font-size:6"><flowRegion
+         id="flowRegion3987"><rect
+           id="rect3989"
+           width="825.9007"
+           height="1357.645"
+           x="-1190.7678"
+           y="580.01483" /></flowRegion><flowPara
+         id="flowPara3991"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3993"
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"><flowRegion
+         id="flowRegion3995"><rect
+           id="rect3997"
+           width="687.3078"
+           height="1312.3901"
+           x="-1055.0033"
+           y="599.81384" /></flowRegion><flowPara
+         id="flowPara3999"
+         style="font-size:36px;font-family:Arial;-inkscape-font-specification:Arial">The iterations were performed by running experiments varying each control factor by, initially, 10%. The result of these experiments was the ΔY value indicated on the right. Using this result it was then possible to regress the input factors into a model using RS/1 and use this model to find optimum values to minimise ΔY.</flowPara><flowPara
+         style="font-size:36px;font-family:Arial;-inkscape-font-specification:Arial"
+         id="flowPara4001" /><flowPara
+         style="font-size:36px;font-family:Arial;-inkscape-font-specification:Arial"
+         id="flowPara4027">On each iteration the optimisation would find factors limited at the edges of the range chosen in the experiments. The range chosen for the next experiment was then based on this observation. These ranges were chosen based on intuition - a percentage of the value the factor was found to be limited at.</flowPara><flowPara
+         style="font-size:36px;font-family:Arial;-inkscape-font-specification:Arial"
+         id="flowPara4029" /><flowPara
+         style="font-size:36px;font-family:Arial;-inkscape-font-specification:Arial"
+         id="flowPara4017">The graph on the right shows the ΔY acheived on each iteration. This had to be plotted on a logarithmic scale for the higher iterations to be visible.</flowPara><flowPara
+         style="font-size:36px;font-family:Arial;-inkscape-font-specification:Arial"
+         id="flowPara4019" /></flowRoot>  </g>
 </svg>
