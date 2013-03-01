@@ -14,15 +14,18 @@ def plt(zd):
 
     grid(which="both")
 
-    xlabel("Galvanometer current(mA)")
-    ylabel("$R_{y}(\Omega)$")
+    xticks(fontsize='large')
+    yticks(fontsize='large')
+
+    xlabel("Galvanometer current(mA)", fontsize='large')
+    ylabel("$R_{y}(\Omega)$", fontsize='large')
 
     show()
 
     return None
 
 if __name__ == "__main__":
-    filename = "rgraphs.csv"
+    filename = "mcbad.csv"
     import csv
     f = open(filename)
     c = csv.reader(f)  
@@ -32,6 +35,6 @@ if __name__ == "__main__":
     zd = zip(*d)
     zd2 = []
     zd2.append(map(lambda x: 1000*x, zd[0]))
-    for x in zd[15:]:
+    for x in zd[1:]:
         zd2.append(x)
     plt(zd2)
