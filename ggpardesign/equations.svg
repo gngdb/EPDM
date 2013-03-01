@@ -16,8 +16,8 @@
    viewBox="0 0 147.399 99.0151"
    width="147.399"
    id="svg2"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="CodeCogsEqn.svg">
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="equations.svg">
   <metadata
      id="metadata69">
     <rdf:RDF>
@@ -26,7 +26,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,19 +39,26 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
+     inkscape:window-width="1280"
+     inkscape:window-height="947"
      id="namedview67"
      showgrid="false"
-     inkscape:zoom="2.3270171"
-     inkscape:cx="73.699501"
-     inkscape:cy="49.507549"
+     inkscape:zoom="2"
+     inkscape:cx="73.214614"
+     inkscape:cy="58.476912"
      inkscape:window-x="0"
-     inkscape:window-y="26"
-     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <defs
      id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 49.507549 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="147.399 : 49.507549 : 1"
+       inkscape:persp3d-origin="73.699501 : 33.005033 : 1"
+       id="perspective40" />
     <path
        d="M5.016 -3L7.404 -5.4C7.536 -5.532 7.56 -5.556 7.56 -5.652C7.56 -5.784 7.452 -5.892 7.32 -5.892C7.224 -5.892 7.176 -5.844 7.068 -5.736L4.668 -3.336L2.256 -5.736C2.124 -5.868 2.1 -5.892 2.004 -5.892C1.884 -5.892 1.764 -5.784 1.764 -5.652C1.764 -5.556 1.812 -5.508 1.92 -5.4L4.308 -3L1.92 -0.612C1.8 -0.492 1.764 -0.42 1.764 -0.348C1.764 -0.216 1.884 -0.108 2.004 -0.108C2.1 -0.108 2.124 -0.132 2.256 -0.264L4.656 -2.664L7.056 -0.264C7.176 -0.144 7.248 -0.108 7.32 -0.108C7.464 -0.108 7.56 -0.216 7.56 -0.348C7.56 -0.444 7.536 -0.468 7.404 -0.6L5.016 -3Z"
        id="g42" />
@@ -81,200 +88,259 @@
        xlink:href="http://codecogs.izyba.com/svg.js"
        type="text/ecmascript" />
   </defs>
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use15"
-     y="70.3181"
-     xlink:href="#g082"
-     x="56.624802"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use17"
-     y="72.118103"
-     xlink:href="#g167"
-     x="65.568298"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use19"
-     y="70.3181"
-     xlink:href="#g261"
-     x="76.025002"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use21"
-     y="62.200001"
-     xlink:href="#g082"
-     x="89.697098"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use23"
-     y="64"
-     xlink:href="#g166"
-     x="98.640602"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use25"
-     y="62.200001"
-     xlink:href="#g42"
-     x="108.613"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use27"
-     y="62.200001"
-     xlink:href="#g082"
-     x="120.613"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use29"
-     y="64"
-     xlink:href="#g168"
-     x="129.556"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <rect
-     id="rect31"
-     y="19.617153"
-     x="76.045647"
-     width="71.353203"
-     height="0.71996999" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use33"
-     y="78.5495"
-     xlink:href="#g082"
-     x="106.516"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use35"
-     y="80.349503"
-     xlink:href="#g1121"
-     x="115.459"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use37"
-     y="91.105003"
-     xlink:href="#g082"
-     x="39"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use39"
-     y="92.904999"
-     xlink:href="#g1121"
-     x="47.943501"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use41"
-     y="91.105003"
-     xlink:href="#g261"
-     x="56.265301"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use43"
-     y="91.105003"
-     xlink:href="#g250"
-     x="68.737396"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use45"
-     y="111.779"
-     xlink:href="#g082"
-     x="39"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use47"
-     y="113.579"
-     xlink:href="#g167"
-     x="47.943501"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use49"
-     y="111.779"
-     xlink:href="#g261"
-     x="58.4002"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use51"
-     y="103.661"
-     xlink:href="#g082"
-     x="72.072304"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use53"
-     y="105.461"
-     xlink:href="#g166"
-     x="81.0158"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use55"
-     y="103.661"
-     xlink:href="#g42"
-     x="90.988098"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use57"
-     y="103.661"
-     xlink:href="#g082"
-     x="102.988"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use59"
-     y="105.461"
-     xlink:href="#g168"
-     x="111.932"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
-  <rect
-     id="rect61"
-     y="81.808502"
-     x="49.608456"
-     width="71.353203"
-     height="0.71996999" />
-  <use
-     height="99.015099"
-     width="147.399"
-     id="use63"
-     y="120.01"
-     xlink:href="#g250"
-     x="92.919197"
-     transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot2877"
+     style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Arial;font-style:normal;font-weight:normal;font-size:6;-inkscape-font-specification:Arial"><flowRegion
+       id="flowRegion2879"><rect
+         id="rect2881"
+         width="129.25"
+         height="137.25"
+         x="-131.5"
+         y="-5.484901"
+         style="-inkscape-font-specification:Arial;font-family:Arial" /></flowRegion><flowPara
+       id="flowPara2883"></flowPara></flowRoot>  <g
+     id="g2932">
+    <g
+       id="g2914">
+      <g
+         id="g2904">
+        <use
+           transform="matrix(1.5,0,0,1.5,-58.5,-81)"
+           x="56.624802"
+           xlink:href="#g082"
+           y="70.3181"
+           id="use15"
+           width="147.399"
+           height="99.015099" />
+        <use
+           transform="matrix(1.5,0,0,1.5,-58.5,-81)"
+           x="65.568298"
+           xlink:href="#g167"
+           y="72.118103"
+           id="use17"
+           width="147.399"
+           height="99.015099" />
+      </g>
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use19"
+         y="70.3181"
+         xlink:href="#g261"
+         x="76.025002"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use21"
+         y="62.200001"
+         xlink:href="#g082"
+         x="89.697098"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use23"
+         y="64"
+         xlink:href="#g166"
+         x="98.640602"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use25"
+         y="62.200001"
+         xlink:href="#g42"
+         x="108.613"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use27"
+         y="62.200001"
+         xlink:href="#g082"
+         x="120.613"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use29"
+         y="64"
+         xlink:href="#g168"
+         x="129.556"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <rect
+         id="rect31"
+         y="19.617153"
+         x="76.045647"
+         width="71.353203"
+         height="0.71996999" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use33"
+         y="78.5495"
+         xlink:href="#g082"
+         x="106.516"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use35"
+         y="80.349503"
+         xlink:href="#g1121"
+         x="115.459"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+    </g>
+    <g
+       transform="translate(3.3587572,-5.1265242)"
+       id="g2846">
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use37"
+         y="91.105003"
+         xlink:href="#g082"
+         x="39"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use39"
+         y="92.904999"
+         xlink:href="#g1121"
+         x="47.943501"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use41"
+         y="91.105003"
+         xlink:href="#g261"
+         x="56.265301"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use43"
+         y="91.105003"
+         xlink:href="#g250"
+         x="68.737396"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+    </g>
+    <g
+       id="g2852">
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use45"
+         y="111.779"
+         xlink:href="#g082"
+         x="39"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use47"
+         y="113.579"
+         xlink:href="#g167"
+         x="47.943501"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use49"
+         y="111.779"
+         xlink:href="#g261"
+         x="58.4002"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use51"
+         y="103.661"
+         xlink:href="#g082"
+         x="72.072304"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use53"
+         y="105.461"
+         xlink:href="#g166"
+         x="81.0158"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use55"
+         y="103.661"
+         xlink:href="#g42"
+         x="90.988098"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use57"
+         y="103.661"
+         xlink:href="#g082"
+         x="102.988"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use59"
+         y="105.461"
+         xlink:href="#g168"
+         x="111.932"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+      <rect
+         id="rect61"
+         y="81.808502"
+         x="49.608456"
+         width="71.353203"
+         height="0.71996999" />
+      <use
+         height="99.015099"
+         width="147.399"
+         id="use63"
+         y="120.01"
+         xlink:href="#g250"
+         x="92.919197"
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)" />
+    </g>
+    <flowRoot
+       style="font-size:6px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       id="flowRoot2885"
+       xml:space="preserve"><flowRegion
+         id="flowRegion2887"><rect
+           y="2.0150988"
+           x="-127"
+           height="96"
+           width="123"
+           id="rect2889" /></flowRegion><flowPara
+         id="flowPara2891">If RS/1 was given      as a control factor this would be varied with respect to the other factors. The equation on the right is the requirement for the circuit to balance; therefore it must be calculated for each run and if not there is no guarantee the circuit will balance at 2 Ω.</flowPara><flowPara
+         id="flowPara2930" /><flowPara
+         id="flowPara2928">This is done in a Python function as on the right. The result can then run the experiment using the existing C program. </flowPara></flowRoot>    <g
+       transform="matrix(0.38698664,0,0,0.38698664,-84.062722,-1.2587855)"
+       id="g2908">
+      <use
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)"
+         x="56.624802"
+         xlink:href="#g082"
+         y="70.3181"
+         id="use2910"
+         width="147.399"
+         height="99.015099" />
+      <use
+         transform="matrix(1.5,0,0,1.5,-58.5,-81)"
+         x="65.568298"
+         xlink:href="#g167"
+         y="72.118103"
+         id="use2912"
+         width="147.399"
+         height="99.015099" />
+    </g>
+  </g>
 </svg>
