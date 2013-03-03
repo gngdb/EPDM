@@ -8,7 +8,7 @@ def plt(zd):
 
     ax = subplot(111)
     for x in range(len(zd)-1):
-        plot(zd[0],zd[x+1], alpha=0.1, color='black', linewidth=3.0)
+        plot(zd[0],zd[x+1], alpha=0.02, color='black', linewidth=3.0)
 
     minorticks_on()
 
