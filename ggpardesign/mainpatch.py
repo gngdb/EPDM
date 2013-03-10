@@ -6,11 +6,6 @@ def iterator2():
     import pickle
     
     data = dload("DUMP_FILE") 
-    #infer what Rc should be on each line
-    #data2= []
-    #for line in data:
-    #    Rc = (line[2]*line[1])/2
-    #    data2.append(line[0:2]+[Rc]+line[2:])
 
     #modulate with random variable
     #query before doing this, so test can also work without this
@@ -123,6 +118,11 @@ def iterator2():
             print "Processing complete"
             break
         elif uq == "n":
+            #infer what Rc should be on each line
+            data2= []
+            for line in data:
+                Rc = (line[2]*line[1])/2
+                data2.append(line[0:2]+[Rc]+line[2:])
             #run nominal
             odata = begin(data2)
             #probably just change this bit to a simple for loop

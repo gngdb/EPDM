@@ -1,3 +1,177 @@
+def iterator2():
+    #monte carlo iterator to run the test many times with random values
+    import random
+    import math
+    import time
+    import pickle
+    
+    data = dload("DUMP_FILE") 
+
+    #modulate with random variable
+    #query before doing this, so test can also work without this
+    #good old infinite loop
+    while 1:
+        #user query
+        uq = raw_input("Run Monte Carlo(mc) or nominal(n):\n")
+        if uq == "mc":
+            #run Monte Carlo
+            datalist = []
+            mclist = []
+            for i in xrange(200):
+                print "iteration %s/200"%(i+1)
+                #modulate all resistor values and power supply as Gaussian random variables
+                mcdata = []
+                for line in data:
+                    #new li
+                    nl = []
+                    #using the final design
+                    Ra = 3.0
+                    Rb = 12.7
+                    Rc = 40.2+36.0
+                    Rd = 12
+                    Ve = 1.5
+                    Rf = 1.0
+                    #ASSUMING HERE THE VALUES ARE INPUT AS STANDARD DEVIATIONS
+                    nl.append(random.gauss(Ra, Ra*(line[0]/100)))
+                    nl.append(random.gauss(Rb, Rb*(line[1]/100)))
+                    nl.append(random.gauss(Rc, Rc*(line[2]/100)))
+                    nl.append(random.gauss(Rd, Rd*(line[3]/100)))
+                    nl.append(random.gauss(Ve, Ve*(line[4]/100)))
+                    nl.append(random.gauss(Rf, Rf*(line[5]/100)))
+                    mcdata.append(nl)
+                mclist.append(mcdata)
+                datalist.append(begin(mcdata))
+            f = open("mcdata.pickle", "w")
+            pickle.dump(mclist, f)
+            f.close()
+            print "Monte Carlo complete"
+            print "Processing..."
+            #use the output data to calculate variations in output variables
+            mcout = []
+            #the data is a list of list of lists at this point
+            for line in zip(*datalist):
+                #so unpack it into lists and zip each row into a tuple of lists
+                #then unpack the tuple into lists and then zip these lists into tuples
+                #so now each tuple in the data is each output of the Monte Carlo  
+                linz = zip(*line)
+                avgs = []
+                #calculate average of each tuple and add it to a list
+                for x in linz:
+                    avgs.append(sum(x)/len(x))
+                #do the same with standard deviations
+                sigmas = []
+                for x, avg in zip(linz, avgs):
+                    s = map(lambda y: (y-avg)**2, x)
+                    sigmas.append(math.sqrt(sum(s)/len(s))) 
+                #estimate yield from both dys
+                ylds = []
+                #make a list of the averages and sigmas in tuples, then throw away all but the dys
+                for x in zip(avgs, sigmas)[:2]:
+                    ylds.append(x[0]/x[1])
+                #smallest yield is the worst yield
+                yld = min(ylds)
+                #estimate worst case power consumption
+                pwc = avgs[2]+6*sigmas[2]
+                #esimate worst case accuracy
+                dywcs = []
+                for x in zip(avgs, sigmas)[:2]:
+                    dywcs.append(x[0]+6*x[1])
+                dywc = max(dywcs)
+                #estimate worst case power consumption for each resistor
+                Rwcs = []
+                for x in zip(avgs,sigmas)[3:]:
+                    Rwcs.append(x[0]+6*x[1])
+                #append results to list
+                mcout.append([dywc,pwc,yld]+Rwcs)
+            
+            #write results to output file
+            f = open("LOAD_FILE", "w")
+            for x in mcout:
+                y = range(len(x))
+                y.reverse()
+                for z in zip(x,y):
+                    if z[1]==0:
+                        f.write("%f\n"%z[0])
+                    else:
+                        f.write("%f|"%z[0])
+                    #f.write("%f|%f|%f\n"%(x[0],x[1],x[2]))           
+            f.close()
+            #combine input and output data
+            pdata = map(lambda x: x[0]+x[1], zip(data,mcout))
+            #pickle results
+            #open pickle file
+            try:
+                #open existing dictionary
+                f = open("dblog.pickle")
+                #and read it
+                pdict = pickle.load(f)
+                f.close()
+            except IOError:
+                #initialise dictionary
+                pdict = {}
+            #add to pickled dictionary
+            pdict[time.ctime(time.time())] = pdata
+            #rewrite pickle file
+            f = open("dblog.pickle", "wb")
+            pickle.dump(pdict, f)
+            f.close()
+            print "Processing complete"
+            break
+        elif uq == "n":
+            #infer what Rc should be on each line
+            data2= []
+            for line in data:
+                Rc = (line[2]*line[1])/2
+                data2.append(line[0:2]+[Rc]+line[2:])
+
+            #run nominal
+            odata = begin(data2)
+            #probably just change this bit to a simple for loop
+            #odata = map(lambda x: [max(x[:2]),x[2:]],odata[:])
+            odata2 = []
+            for line in odata[:]:
+                l2 = [max(line[:2])]
+                l2.extend(line[2:])
+                odata2.append(l2)
+            #write results to output file
+            f = open("LOAD_FILE", "w")
+            for x in odata2:
+                y = range(len(x))
+                y.reverse()
+                for z in zip(x,y):
+                    if z[1]==0:
+                        f.write("%f\n"%z[0])
+                    else:
+                        f.write("%f|"%z[0])
+            f.close()
+            #pickle results
+            #combine output and input data
+            pdata = [] #I could do this with a map, but for some reason did not
+            for x in zip(data2,odata2):
+                pdata.append(x[0]+x[1])
+            #open pickle file
+            try:
+                #open existing dictionary
+                f = open("dblog.pickle")
+                #and read it
+                pdict = pickle.load(f)
+                f.close()
+            except IOError:
+                #initialise dictionary
+                pdict = {}
+            #add to pickled dictionary
+            pdict[time.ctime(time.time())] = pdata
+            #rewrite pickle file
+            f = open("dblog.pickle", "wb")
+            pickle.dump(pdict, f)
+            f.close()
+            break
+        elif uq == "\n":
+            break
+    return None
+
+
+
 def dload(fname):
     #open DUMP_FILE
     f = open(fname)
@@ -20,7 +194,8 @@ def dload(fname):
     return data
 
 def powercalc(line):
-    #assuming balanced circuit, find power consumption
+    """assuming balanced circuit, find power consumption"""
+    #my excuse for it being this verbose is to make it easily readable
     Ra = line[0]
     Rb = line[1]
     Rc = line[2]
@@ -29,21 +204,21 @@ def powercalc(line):
     Rf = line[5]
     Ry = 2.0
     #Using thevenins theorem, Vy is the point next to Rb
-    Vthy = (Ve*(Rd+Rf))/(Rd+Rc+Rf)
-    Rthy = Ry + (Rf*(Rd+Rc))/(Rf+Rd+Rc)
-    Ithy = Vthy/(Rthy+Rb)
-    Vy = (Rb*Vthy)/(Rthy+Rb)
-    Pb = Vy*Ithy
+    Vthy = (Ve*(Rd+Rc))/(Rd+Rc+Rf)
+    Rthy = (Rf*(Rd+Rc))/(Rf+Rc+Rd)
+    Vy = (Rb*Vthy)/(Rthy+Ry+Rb)
+    Pb = (Vy**2)/Rb
     #Vz is the point next to Rc
     Vthz = (Ve*(Ry+Rb))/(Rf+Ry+Rb)
-    Rthz = (Rf*(Ry+Rb))/(Rf+Ry+Rb) + Rd
-    Ithz = Ve/(Rthz + Rc)
-    Vz = (Vthz*Rc)/(Rthz+Rc)
-    Pc = Ithz*Vz
+    Rthz = (Rf*(Ry+Rb))/(Rf+Ry+Rb)
+    Vz = (Vthz*Rc)/(Rthz+Rd+Rc)
+    Pc = (Vz**2)/Rc
     #Vx is the point next to Rf
-    Vx = (Ve*(Ry+Rb)*(Rd+Rc))/((Ry+Rb)*(Rd+Rc)+Rf*(Ry+Rb+Rd+Rc))
-    Pd = (Vx**2)/Rd
-    Pf = ((Ve-Vz)**2)/Rf
+    Rbridge = ((Ry+Rb)*(Rd+Rc))/(Ry+Rb+Rd+Rc) 
+    Vx = (Ve*Rbridge)/(Rbridge+Rf)
+    Pd = ((Vx-Vz)**2)/Rd
+    Pf = ((Ve-Vx)**2)/Rf
+    #hah, recalculate Rbridge here because I wrote this bit befor the rest
     Rtot = Rf + ((Ry+Rb)*(Rd+Rc))/(Ry+Rb+Rd+Rc)
     power = (Ve**2)/Rtot
     return [power,Pb, Pc, Pd, Pf]
@@ -74,7 +249,7 @@ def iterator():
             psv = float(raw_input("Power supply standard deviation(in %):"))/100
             #run Monte Carlo
             datalist = []
-            for i in xrange(1000):
+            for i in xrange(200):
                 print "iteration %s/1000"%(i+1)
                 #modulate all resistor values and power supply as Gaussian random variables
                 mcdata = []
@@ -82,6 +257,7 @@ def iterator():
                     #new line
                     nl=[]
                     for R in line[:4]:
+                        #5.9 instead of 6, as that's what the research turned up
                         nl.append(random.gauss(R, tol*R/5.9))
                     nl.append(random.gauss(line[4],line[4]*psv))
                     nl.append(random.gauss(line[5], tol*line[5]/5.9))
@@ -292,5 +468,5 @@ def begin(data):
     return odata 
 
 if __name__ == "__main__":
-    iterator()
+    iterator2()
 
