@@ -8,14 +8,14 @@ def plt(zd):
 
     ax = subplot(111)
     for x in range(len(zd)-1):
-        plot(zd[0],zd[x+1])
+        plot(zd[0],zd[x+1], alpha=0.02, color='black', linewidth=3.0)
 
     minorticks_on()
 
     grid(which="both")
 
-    xticks(fontsize='x-large')
-    yticks(fontsize='x-large')
+    xticks(fontsize='xx-large')
+    yticks(fontsize='xx-large')
 
     xlabel("Galvanometer current(mA)", fontsize='x-large')
     ylabel("$R_{y}(\Omega)$", fontsize='x-large')
@@ -25,7 +25,7 @@ def plt(zd):
     return None
 
 if __name__ == "__main__":
-    filename = "mcgood.csv"
+    filename = "mcgood2.csv"
     import csv
     f = open(filename)
     c = csv.reader(f)  
